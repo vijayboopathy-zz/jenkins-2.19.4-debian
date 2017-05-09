@@ -5,5 +5,5 @@ RUN apt install -y wget \
     && systemctl enable docker \
     && usermod -aG docker jenkins \ 
     && curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose \
-    && chmod +ax ~/docker-compose 
+    && chmod 755 ~/docker-compose 
 USER jenkins      
