@@ -17,9 +17,6 @@ USER jenkins
 RUN wget -qO- get.docker.io | sh && \
     sudo usermod -aG docker jenkins
 
-# Enable and Start Docker
-RUN sudo service docker start
-
 # Install Docker Compose
 RUN curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose && \
     chmod +x ~/docker-compose
