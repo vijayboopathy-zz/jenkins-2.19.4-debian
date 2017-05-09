@@ -1,5 +1,6 @@
 FROM jenkins:2.19.4
-RUN apt install -y wget \
+USER jenkins
+RUN sudo apt install -y wget \
     && wget -qO- get.docker.com | sh \
     && sudo systemctl enable docker \
     && sudo usermod -aG docker jenkins \ 
