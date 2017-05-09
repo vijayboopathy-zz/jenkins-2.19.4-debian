@@ -6,7 +6,8 @@ MAINTAINER vijayboopathy <vibe@initcron.org>
 USER root
 
 # Install Prereqs
-RUN apt-get -y install wget sudo && \
+RUN apt update -y && \
+    apt-get -y install wget sudo && \
     echo "jenkins    ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 # Change to Jenkins User
