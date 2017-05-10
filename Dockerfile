@@ -14,8 +14,6 @@ RUN apt update -y && \
 RUN curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose
 
-# Change to Jenkins User
-USER jenkins
 
 # Install Docker-Engine
 RUN wget -qO- get.docker.io | sh && \
@@ -24,4 +22,4 @@ RUN wget -qO- get.docker.io | sh && \
 # Change to Jenkins User
 USER jenkins
 
-ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
+#ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
